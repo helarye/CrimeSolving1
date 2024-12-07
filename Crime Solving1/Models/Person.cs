@@ -21,7 +21,7 @@ namespace Crime_Solving1.Models
         public GenderP? GenderP { get; set; }
 
         public ICollection<CrimeEvent> Events { get; set; }
-
+        //check
 
     }
 }
