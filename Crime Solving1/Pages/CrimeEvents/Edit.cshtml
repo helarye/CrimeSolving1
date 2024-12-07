@@ -1,0 +1,70 @@
+﻿@page
+@model Crime_Solving1.Pages.CrimeEvents.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>CrimeEvent</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CrimeEvent.EventId" />
+            <div class="form-group">
+                <label asp-for="CrimeEvent.Category" class="control-label"></label>
+                <input asp-for="CrimeEvent.Category" class="form-control" />
+                <span asp-validation-for="CrimeEvent.Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrimeEvent.CrimeTime" class="control-label"></label>
+                <input asp-for="CrimeEvent.CrimeTime" class="form-control" />
+                <span asp-validation-for="CrimeEvent.CrimeTime" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CrimeEvent.InForest" /> @Html.DisplayNameFor(model => model.CrimeEvent.InForest)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrimeEvent.CrimeTown" class="control-label"></label>
+                <input asp-for="CrimeEvent.CrimeTown" class="form-control" />
+                <span asp-validation-for="CrimeEvent.CrimeTown" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrimeEvent.CrimeStreet" class="control-label"></label>
+                <input asp-for="CrimeEvent.CrimeStreet" class="form-control" />
+                <span asp-validation-for="CrimeEvent.CrimeStreet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrimeEvent.PersonId" class="control-label"></label>
+                <select asp-for="CrimeEvent.PersonId" class="form-control" asp-items="ViewBag.PersonId"></select>
+                <span asp-validation-for="CrimeEvent.PersonId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrimeEvent.SuspectId" class="control-label"></label>
+                <select asp-for="CrimeEvent.SuspectId" class="form-control" asp-items="ViewBag.SuspectId"></select>
+                <span asp-validation-for="CrimeEvent.SuspectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrimeEvent.ReportId" class="control-label"></label>
+                <select asp-for="CrimeEvent.ReportId" class="form-control" asp-items="ViewBag.ReportId"></select>
+                <span asp-validation-for="CrimeEvent.ReportId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

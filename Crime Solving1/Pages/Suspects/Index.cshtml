@@ -1,0 +1,85 @@
+﻿@page
+@model Crime_Solving1.Pages.Suspects.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>חשודים</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Suspect[0].SuspectFname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Suspect[0].SuspectLname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Suspect[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Suspect[0].SuspectDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Suspect[0].SuspectTown)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Suspect[0].SuspectStreet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Suspect[0].SuspectHouseNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Suspect[0].SAlibi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Suspect[0].CriminalFolder)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Suspect) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuspectFname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuspectLname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuspectDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuspectTown)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuspectStreet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuspectHouseNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SAlibi)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.CriminalFolder)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.SuspectId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.SuspectId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.SuspectId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -33,9 +33,6 @@ namespace Crime_Solving1.Migrations
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CrimePlace")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CrimeStreet")
                         .HasColumnType("nvarchar(max)");
 
@@ -44,6 +41,9 @@ namespace Crime_Solving1.Migrations
 
                     b.Property<string>("CrimeTown")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("InForest")
+                        .HasColumnType("bit");
 
                     b.Property<int>("PersonId")
                         .HasColumnType("int");
@@ -73,20 +73,29 @@ namespace Crime_Solving1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PersonId"));
 
-                    b.Property<string>("Address")
+                    b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CriminalId")
+                    b.Property<int?>("GenderP")
                         .HasColumnType("int");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("PAlibi")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PAlibi")
+                    b.Property<string>("PersonDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PersonHouseNum")
                         .HasColumnType("int");
+
+                    b.Property<string>("PersonStreet")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PersonTown")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("PersonalFolder")
                         .HasColumnType("bit");
@@ -132,13 +141,31 @@ namespace Crime_Solving1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SuspectId"));
 
-                    b.Property<int>("SAlibi")
+                    b.Property<bool>("CriminalFolder")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("Gender")
                         .HasColumnType("int");
+
+                    b.Property<string>("SAlibi")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SuspectDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SuspectName")
+                    b.Property<string>("SuspectFname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SuspectHouseNum")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SuspectLname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SuspectStreet")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SuspectTown")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SuspectId");

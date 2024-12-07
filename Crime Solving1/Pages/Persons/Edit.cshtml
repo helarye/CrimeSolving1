@@ -1,0 +1,75 @@
+﻿@page
+@model Crime_Solving1.Pages.Persons.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Person.PersonId" />
+            <div class="form-group">
+                <label asp-for="Person.FirstName" class="control-label"></label>
+                <input asp-for="Person.FirstName" class="form-control" />
+                <span asp-validation-for="Person.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.LastName" class="control-label"></label>
+                <input asp-for="Person.LastName" class="form-control" />
+                <span asp-validation-for="Person.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.PersonTown" class="control-label"></label>
+                <input asp-for="Person.PersonTown" class="form-control" />
+                <span asp-validation-for="Person.PersonTown" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.PersonStreet" class="control-label"></label>
+                <input asp-for="Person.PersonStreet" class="form-control" />
+                <span asp-validation-for="Person.PersonStreet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.PersonHouseNum" class="control-label"></label>
+                <input asp-for="Person.PersonHouseNum" class="form-control" />
+                <span asp-validation-for="Person.PersonHouseNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.PersonDescription" class="control-label"></label>
+                <input asp-for="Person.PersonDescription" class="form-control" />
+                <span asp-validation-for="Person.PersonDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Person.PersonalFolder" /> @Html.DisplayNameFor(model => model.Person.PersonalFolder)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.PAlibi" class="control-label"></label>
+                <input asp-for="Person.PAlibi" class="form-control" />
+                <span asp-validation-for="Person.PAlibi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.GenderP" class="control-label"></label>
+                <input asp-for="Person.GenderP" class="form-control" />
+                <span asp-validation-for="Person.GenderP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

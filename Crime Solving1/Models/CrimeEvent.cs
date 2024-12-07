@@ -8,7 +8,7 @@ namespace Crime_Solving1.Models
         public int EventId { get; set; }
         public string Category { get; set; }
         public DateTime CrimeTime { get; set; }
-        public string CrimePlace { get; set; }
+        public bool InForest { get; set; }
         public string CrimeTown { get; set; }
         public string CrimeStreet { get; set; }
 

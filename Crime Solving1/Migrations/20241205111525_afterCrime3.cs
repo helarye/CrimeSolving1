@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Crime_Solving1.Migrations
 {
     /// <inheritdoc />
-    public partial class afterCrime1 : Migration
+    public partial class afterCrime3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,12 +17,15 @@ namespace Crime_Solving1.Migrations
                 {
                     PersonId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CriminalId = table.Column<int>(type: "int", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PersonTown = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PersonStreet = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PersonHouseNum = table.Column<int>(type: "int", nullable: false),
+                    PersonDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PersonalFolder = table.Column<bool>(type: "bit", nullable: false),
-                    PAlibi = table.Column<int>(type: "int", nullable: false)
+                    PAlibi = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GenderP = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -52,9 +55,15 @@ namespace Crime_Solving1.Migrations
                 {
                     SuspectId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SuspectName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SuspectFname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SuspectLname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SuspectDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SAlibi = table.Column<int>(type: "int", nullable: false)
+                    SuspectTown = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SuspectStreet = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SuspectHouseNum = table.Column<int>(type: "int", nullable: false),
+                    SAlibi = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Gender = table.Column<int>(type: "int", nullable: true),
+                    CriminalFolder = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -69,7 +78,7 @@ namespace Crime_Solving1.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CrimeTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CrimePlace = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    InForest = table.Column<bool>(type: "bit", nullable: false),
                     CrimeTown = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CrimeStreet = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PersonId = table.Column<int>(type: "int", nullable: false),

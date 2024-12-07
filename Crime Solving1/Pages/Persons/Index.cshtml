@@ -1,0 +1,87 @@
+﻿@page
+@model Crime_Solving1.Pages.Persons.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>עדים ומדווחים</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].GenderP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].PersonDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].PersonTown)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].PersonStreet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].PersonHouseNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].PersonalFolder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].PAlibi)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Person) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenderP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonTown)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonStreet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonHouseNum)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalFolder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAlibi)
+            </td>
+            
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PersonId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PersonId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PersonId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
