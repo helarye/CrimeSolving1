@@ -22,6 +22,6 @@ namespace Crime_Solving1.Models
         public bool CriminalFolder { get; set; }
 
         public ICollection<CrimeEvent> CrimeEvents { get; set; }
-
+        //check saving rep
     }
 }
