@@ -78,6 +78,7 @@
                 <a asp-page="./Edit" asp-route-id="@item.SuspectId">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.SuspectId">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.SuspectId">Delete</a>
+                <a asp-page="/CrimeEvents/SuspectCr" asp-route-suspectId="@item.SuspectId">View Crimes</a>
             </td>
         </tr>
 }
